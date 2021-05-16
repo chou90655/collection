@@ -5,6 +5,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      list: 10
+    }
+  }
 }
 </script>
 <style scoped lang="scss">

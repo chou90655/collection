@@ -1,0 +1,40 @@
+* {
+  margin 0
+  padding 0
+}
+html,body
+  height 100%
+  width 100%
+  overflow hidden
+  touch-action manipulation
+  body
+    box-sizing border-box
+    padding-bottom: env(safe-area-inset-bottom);
+ul,li
+  list-style none
+i
+  font-style normal
+u
+  text-decoration none
+input
+  outline none
+  border-radius 0
+  -webkit-appearance: none;
+  &::placeholder
+    color #9A9BA1
+  &::-webkit-outer-spin-button,&::-webkit-inner-spin-button
+    -webkit-appearance: none
+.fxi
+  display flex
+  align-items center
+._eps
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+.slide-right-enter-active, .slide-right-leave-active
+.slide-left-enter-active, .slide-left-leave-active
+  transition transform .2s ease-in-out
+.slide-right-leave-to,.slide-left-enter
+  transform translateX(-100%)
+.slide-right-enter,.slide-left-leave-to
+  transform translateX(100%)

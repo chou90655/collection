@@ -1,8 +1,34 @@
 import request from './request'
-export function login(data) { // 个人信息 - 修改QQ
+// import qs from 'qs'
+export function list(data) {
   return request({
-    url: '/user/login',
+    url: 'posts',
+    method: 'get',
+    data
+  })
+}
+export function create(data) {
+  return request({
+    url: 'posts',
     method: 'post',
     data
+  })
+}
+export function detail(id) {
+  return request({
+    url: 'posts/' + id,
+    method: 'get'
+  })
+}
+export function del(id) {
+  return request({
+    url: 'posts/' + id,
+    method: 'delete'
+  })
+}
+export function testd1(data) {
+  return request({
+    url: '/',
+    method: 'get'
   })
 }

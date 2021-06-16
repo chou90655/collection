@@ -11,8 +11,9 @@ const t = (v) => () => import('./components/' + v)
 export default {
   data() {
     return {
-      idx: 0,
-      list: [{ l: '列表', c: t('list') }, { l: '滚动', c: t('scroll') }, { l: '滚动加载', c: t('pullscrl') }]
+      idx: 4,
+      list: [{ l: '列表', c: t('list') }, { l: '滚动', c: t('scroll') }, { l: '滚动加载', c: t('pullscrl') },
+        { l: 'node', c: t('node') }, { l: 'nodeS', c: t('nodeS') }]
     }
   }
 }

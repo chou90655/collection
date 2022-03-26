@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import { Toast } from 'cube-ui'
 Vue.use(Toast)
-export function toast(txt, mask = true, time = 1600) { // 提示信息函数
+export function toast(txt, mask = true, time = 1000) { // 提示信息函数
   Toast.$create({ txt: txt || '网络异常', type: 'txt', time, mask }).show()
 }
 
@@ -9,9 +9,9 @@ function hdt(t) {
   return ('0' + t).slice(-2)
 }
 // 格式化时间 只支持 'YYYY-MM-DDD'
-export function format(time, n = 0) {
+export function format(time, n = 0, split = '-') {
   const t = new Date(time - n * 24 * 3600000)
-  return t.getFullYear() + '-' + hdt(t.getMonth() + 1) + '-' + hdt(t.getDate())
+  return t.getFullYear() + split + hdt(t.getMonth() + 1) + split + hdt(t.getDate())
 }
 export const formatTime = (time) => {
   const t = new Date(time)
@@ -35,3 +35,5 @@ export function chooseDataZh(arr, num, result, item = []) { // 组合
     result.push([...item, ...arr])
   }
 }
+export const getheight = key => parseInt(getComputedStyle(document.documentElement).getPropertyValue(`--${key}`), 10)
+export const getv = v => v / 375 * document.body.clientWidth

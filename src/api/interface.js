@@ -28,7 +28,7 @@ export function del(id) {
 }
 export function testd1(data) {
   return request({
-    url: '/',
+    url: '/musicapi/playjs2/' + data + '.js',
     method: 'get'
   })
 }

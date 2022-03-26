@@ -12,23 +12,43 @@
 </template>
 
 <script>
+import ids from '../data/ids4'
 import { testd1 } from '../api/interface'
 export default {
   data() {
     return {
       idx: 0,
+      data: [],
       list: []
     }
   },
   methods: {
-    testd1() {
-      testd1().then(res => {
-        console.log(res)
+    testd1(id) {
+      testd1(id).then(res => {
+        const item = res.data.list
+        const data = { url: item.url, name: item.name }
+        console.log(data)
+        this.data.push(data)
+        localStorage._data1 = JSON.stringify(this.data)
       })
     }
   },
   created() {
-    this.testd1()
+    console.log(ids);
+    (async () => {
+      for (let index = 0; index < ids.length; index++) {
+        try {
+          const item = await testd1(ids[index])
+          if (item && item.data && item.data.list) {
+            const data = { url: item.data.list.url, name: item.data.list.name }
+            console.log(data)
+            this.data.push(data)
+            localStorage._data3 = JSON.stringify(this.data)
+          } else console.log(item)
+        } catch (error) {
+        }
+      }
+    })()
   }
 }
 </script>

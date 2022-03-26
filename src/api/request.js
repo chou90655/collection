@@ -3,7 +3,7 @@ import { toast } from '../utils/tools'
 import Store from '../store'
 const request = axios.create({
   // baseURL: process.env.VUE_APP_API,
-  baseURL: 'http://172.20.30.34:3000',
+  baseURL: '/api',
   timeout: 60000
 })
 request.interceptors.request.use(config => {
